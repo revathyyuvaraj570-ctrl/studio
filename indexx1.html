@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>SJ pixel work</title>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        background: #070707;
+    }
+
+    header {
+        background: #0a0a0a;
+        color: rgb(239, 242, 242);
+        text-align: center;
+        padding: 20px;
+    }
+
+    header img {
+        width: 120px;
+        height: auto;
+        margin-bottom: 10px;
+        border-radius: 10px;
+    }
+
+    nav {
+        background: #151515;
+        text-align: center;
+        padding: 10px;
+    }
+
+    nav a {
+        color: rgb(240, 238, 238);
+        margin: 10px;
+      ]  text-decoration: none;
+        font-weight: bold;
+    }
+
+    section {
+        padding: 30px;
+        text-align: center;
+    }
+
+    .buttons button {
+        margin: 10px;
+        padding: 10px 15px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        background: #f9f7f7;
+        color: rgb(10, 10, 10);
+        font-size: 14px;
+    }
+
+    .buttons button:hover {
+        background: #fcfbfb;
+    }
+
+    footer {
+        background: #222;
+        color: white;
+        text-align: center;
+        padding: 10px;
+    }
+</style>
+</head>
+
+<body>
+
+<header>
+    <!-- IMAGE INSERTED HERE -->
+    <img src="logo.png">
+    <h1>SJ pixel work</h1>
+    <p>Capturing Moments, Creating Memories</p>
+</header>
+
+<section>
+    <h2>Quick Actions</h2>
+
+    <div class="buttons">
+        <button onclick="makeCall()">📞 Call</button>
+        <button onclick="openWhatsApp()">💬 WhatsApp</button>
+        <button onclick="openWebsite()">🌐 Website</button>
+        <button onclick="shareSite()">🔗 Share</button>
+        <button onclick="openLocation()">📍 Location</button>
+        <button onclick="saveContact()">💾 Save Contact</button>
+    </div>
+</section>
+
+<footer>
+    <p>© 2025 SJ pixel work</p>
+</footer>
+
+<script>
+    function makeCall() {
+        window.location.href = "tel:+918807967282";
+    }
+
+    function openWhatsApp() {
+        window.location.href =
+            "https://wa.me/918807967282?text=Hello%20DreamShot%20Photo%20Studio";
+    }
+
+    function openWebsite() {
+        window.open("https://example.com", "_blank");
+    }
+
+    function shareSite() {
+        if (navigator.share) {
+            navigator.share({
+                title: "SJ pixel work",
+                text: "Check out SJ pixel work!",
+                url: "https://example.com"
+            });
+        } else {
+            alert("Sharing not supported on this browser.");
+        }
+    }
+
+    function openLocation() {
+        window.open(
+            "https://www.google.com/maps/search/?api=1&query=Photo+Studio",
+            "_blank"
+        );
+    }
+
+    function saveContact() {
+        const vcard = `
+BEGIN:VCARD
+VERSION:3.0
+FN:SJ pixel work
+TEL:+918807967282
+EMAIL:sjpixelworkbv@gmail.com
+END:VCARD
+        `;
+        const blob = new Blob([vcard], { type: "text/vcard" });
+        const link = document.createElement("a");
+        link.href = URL.createObjectURL(blob);
+        link.download = "DreamShot-Contact.vcf";
+        link.click();
+    }
+</script>
+</body>
+</html>

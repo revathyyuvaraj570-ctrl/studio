@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>SJ pixel work</title>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        background: #f4f4f4;
+    }
+
+    header {
+        background: #222;
+        color: white;
+        text-align: center;
+        padding: 20px;
+    }
+
+    nav {
+        background: #444;
+        text-align: center;
+        padding: 10px;
+    }
+
+    nav a {
+        color: white;
+        margin: 10px;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+    section {
+        padding: 30px;
+        text-align: center;
+    }
+
+    .buttons button {
+        margin: 10px;
+        padding: 10px 15px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        background: #ff9800;
+        color: white;
+        font-size: 14px;
+    }
+
+    .buttons button:hover {
+        background: #e68900;
+    }
+
+    footer {
+        background: #222;
+        color: white;
+        text-align: center;
+        padding: 10px;
+    }
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>SJ pixel work</h1>
+    <p>Capturing Moments, Creating Memories</p>
+</header>
+
+<section>
+    <h2>Quick Actions</h2>
+
+    <div class="buttons">
+        <button onclick="makeCall()">📞 Call</button>
+        <button onclick="openWhatsApp()">💬 WhatsApp</button>
+        <button onclick="openWebsite()">🌐 Website</button>
+        <button onclick="shareSite()">🔗 Share</button>
+        <button onclick="openLocation()">📍 Location</button>
+        <button onclick="saveContact()">💾 Save Contact</button>
+    </div>
+</section>
+
+<footer>
+    <p>© 2025 DreamShot Photo Studio</p>
+</footer>
+
+<script>
+    // Phone Call
+    function makeCall() {
+        window.location.href = "tel:+918807967282";
+    }
+
+    // WhatsApp Chat
+    function openWhatsApp() {
+        window.location.href =
+            "https://wa.me/918807967282?text=Hello%20DreamShot%20Photo%20Studio";
+    }
+
+    // Open Website
+    function openWebsite() {
+        window.open("https://example.com", "_blank");
+    }
+
+    // Share Website
+    function shareSite() {
+        if (navigator.share) {
+            navigator.share({
+                title: "SJ pixel work",
+                text: "Check out DreamShot Photo Studio!",
+                url: "https://example.com"
+            });
+        } else {
+            alert("Sharing not supported on this browser.");
+        }
+    }
+
+    // Open Google Maps Location
+    function openLocation() {
+        window.open(
+            "https://www.google.com/maps/search/?api=1&query=Photo+Studio",
+            "_blank"
+        );
+    }
+
+    // Save Contact
+    function saveContact() {
+        const vcard = `
+BEGIN:VCARD
+VERSION:3.0
+FN:SJ pixel work
+TEL:+918807967282
+EMAIL:dreamshotstudio@gmail.com
+END:VCARD
+        `;
+
+        const blob = new Blob([vcard], { type: "text/vcard" });
+        const link = document.createElement("a");
+        link.href = URL.createObjectURL(blob);
+        link.download = "DreamShot-Contact.vcf";
+        link.click();
+    }
+</script>
+
+</body>
+</html>
